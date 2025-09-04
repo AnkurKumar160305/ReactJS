@@ -24,8 +24,8 @@ const Counter = () => {
           <button class="sub" onClick={handleSub}>
             -
           </button>
-          <p class="text">{count}</p>
-          <button class="add" onClick={handleAdd}>
+          <p className="text">{count}</p>
+          <button className="add" onClick={handleAdd}>
             +
           </button>
         </div>
