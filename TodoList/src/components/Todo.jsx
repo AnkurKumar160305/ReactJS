@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { FaFilter } from "react-icons/fa";
 import Task from "./Task";
 import "./Todo.css";
 
 const Todo = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
+
   const [filter, setFilter] = useState("all");
+
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const handleAddTask = () => {
     const text = prompt("Enter task description:");
