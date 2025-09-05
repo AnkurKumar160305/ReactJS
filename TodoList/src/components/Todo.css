@@ -1,0 +1,314 @@
+
+h1 {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 0 18px 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: linear-gradient(90deg, #fff, #dfe9ff);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.container {
+    width: 100%;
+    max-width: 920px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px) saturate(120%);
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.left-head {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #f8fbff;
+}
+
+.right-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.right-head button {
+    appearance: none;
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 180ms ease;
+    box-shadow: 0 4px 14px rgba(2, 6, 23, 0.4);
+}
+
+.right-head .all {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.right-head .done {
+    background: linear-gradient(90deg, var(--accent), #6b9bff33);
+    color: white;
+}
+
+.right-head .not-done {
+    background: linear-gradient(90deg, var(--accent-2), #80ffdbaa);
+    color: #012217;
+}
+
+.right-head button:hover {
+    transform: translateY(-3px)
+}
+
+.right-head button:active {
+    transform: translateY(0)
+}
+
+.filter-img {
+    width: 36px;
+    height: 36px;
+    padding: 10px;
+    color:rgb(185, 185, 185);
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    display: inline-block;
+    object-fit: cover;
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+}
+
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 420px;
+    overflow: auto;
+    padding-right: 6px;
+}
+
+/* custom scrollbar */
+.tasks-list::-webkit-scrollbar {
+    width: 10px
+}
+
+.tasks-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    border-radius: 10px
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: var(--card);
+    border-radius: 12px;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.task:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(2, 6, 23, 0.6);
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.check {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.06);
+    display: inline-grid;
+    place-items: center;
+    cursor: pointer;
+    transition: all 140ms ease;
+}
+
+.check:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    transition: transform 160ms ease;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    border-radius: 3px;
+}
+
+.check:checked {
+    border: 0;
+}
+
+.check:checked:before {
+    transform: scale(1)
+}
+
+.task-text {
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: #eaf4ff;
+    font-size: 16px;
+    min-width: 0;
+    width: 420px;
+    max-width: 66vw;
+}
+
+.task-text::placeholder {
+    color: rgba(255, 255, 255, 0.25)
+}
+
+.task-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-right img {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    padding: 6px;
+    background: var(--glass);
+    cursor: pointer;
+    transition: transform 140ms ease, opacity 140ms ease;
+}
+
+.task-right img:hover {
+    transform: scale(1.06);
+    opacity: 0.95
+}
+
+.delete-img {
+    font-size: 20px;
+    filter: grayscale(40%) drop-shadow(0 6px 12px rgba(255, 107, 107, 0.06));
+}
+
+.edit-img {
+    font-size: 20px;
+    filter: grayscale(10%) drop-shadow(0 6px 12px rgba(124, 92, 255, 0.06));
+    margin-right: 8px;
+}
+
+.add-task {
+    margin-top: 14px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+    border-radius: 12px;
+    border: 1px dashed rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.add-task:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(2, 6, 23, 0.6)
+}
+
+.plus {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.add-text {
+    margin: 0;
+    font-weight: 700;
+    color: var(--muted)
+}
+
+/* small screens */
+@media (max-width:600px) {
+    .container {
+        padding: 14px
+    }
+
+    h1 {
+        font-size: 22px
+    }
+
+    .right-head button {
+        padding: 6px 8px;
+        font-size: 13px
+    }
+
+    .task-text {
+        width: 200px
+    }
+}
+
+/* accessibility focus */
+.right-head button:focus, .check:focus, .add-task:focus {
+    outline: 3px solid rgba(124, 92, 255, 0.18);
+    outline-offset: 3px
+}
+
+/* utility states for done/not-done */
+.task.done {
+    opacity: 0.78;
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.06), rgba(255, 255, 255, 0.01));
+    border-left: 4px solid var(--success)
+}
+
+.task.not-done {
+    border-left: 4px solid rgba(255, 107, 107, 0.18)
+}
+
+/* subtle entrance animation */
+@keyframes floatUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.task {
+    animation: floatUp 380ms ease both
+}
+
+/* helper when task text crosses out for completed tasks */
+.task.done .task-text {
+    text-decoration: line-through;
+    color: rgba(230, 240, 255, 0.55)
+}
+
+/* nice empty state */
+.empty-state {
+    padding: 32px;
+    border-radius: 12px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.45);
+}

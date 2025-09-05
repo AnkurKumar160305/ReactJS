@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root {
+    --bg: #0f1724;
+    /* deep navy */
+    --card: rgba(255, 255, 255, 0.04);
+    --accent: #7c5cff;
+    /* purple */
+    --accent-2: #35d6be;
+    /* teal */
+    --muted: rgba(255, 255, 255, 0.65);
+    --glass: rgba(255, 255, 255, 0.03);
+    --success: #22c55e;
+    --danger: #ff6b6b;
+    --radius: 14px;
+    --shadow: 0 8px 30px rgba(2, 6, 23, 0.7);
+}
+
+* {
+    box-sizing: border-box
+}
+
+html, body, #root {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(124, 92, 255, 0.12), transparent 10%),
+        radial-gradient(900px 500px at 90% 90%, rgba(53, 214, 190, 0.06), transparent 12%),
+        var(--bg);
+    color: #e6eef8;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 48px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
