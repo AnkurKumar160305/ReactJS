@@ -1,4 +1,5 @@
 import { useState,useEffect } from 'react'
+import Blog from './components/Blog'
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <>
+    <Blog></Blog>
     </>
   )
 }
