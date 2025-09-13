@@ -1,0 +1,87 @@
+/* Blog.css */
+
+/* Page background */
+body {
+  background: linear-gradient(135deg, #f6d365, #fda085, #a18cd1, #fbc2eb);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+/* Grid layout for blog cards */
+.news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  align-items: stretch; /* ensures all cards stretch to same height */
+}
+
+/* Card style */
+.news-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 6px 6px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  perspective: 1000px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: rotateY(8deg) rotateX(4deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 12px 12px rgba(0,0,0,0.2);
+}
+
+/* Title */
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+/* Image */
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+/* Content */
+.content {
+  font-size: 1rem;
+  color: #333333;
+  line-height: 1.5;
+  text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.1);
+  flex-grow: 1; /* content grows to fill space */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .news-card {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .content {
+    font-size: 0.95rem;
+  }
+}
