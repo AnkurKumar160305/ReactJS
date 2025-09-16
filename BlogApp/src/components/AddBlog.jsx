@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import "./AddBlog.css";
 
 const AddBlog = () => {
+  const [blogs, setBlogs] = useState([]);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [imageUrl, setImageUrl] = useState('');
@@ -8,13 +10,10 @@ const AddBlog = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newBlog = {
-      title,
-      content,
-      imageUrl
-    };
+    const newBlog = { title, content, imageUrl };
 
-    console.log('New Blog:', newBlog);
+    setBlogs([...blogs, newBlog]);
+    console.log('Blog added:', newBlog);
 
     // Clear form
     setTitle('');
@@ -22,42 +21,44 @@ const AddBlog = () => {
     setImageUrl('');
   };
 
+  useEffect(() => {
+    localStorage.setItem('blogs', JSON.stringify(blogs));
+  }, [blogs]);
+
   return (
-    <div style={{ maxWidth: '500px', margin: '0 auto' }}>
+    <div className="add-blog-container">
       <h2>Add a New Blog</h2>
-      <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: '10px' }}>
+      <form onSubmit={handleSubmit} className="blog-form">
+        
+        <div className="form-group">
           <label>Title:</label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            style={{ width: '100%' }}
           />
         </div>
 
-        <div style={{ marginBottom: '10px' }}>
+        <div className="form-group">
           <label>Content:</label>
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
             required
-            style={{ width: '100%', height: '100px' }}
           />
         </div>
 
-        <div style={{ marginBottom: '10px' }}>
+        <div className="form-group">
           <label>Image URL:</label>
           <input
             type="text"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
-            style={{ width: '100%' }}
           />
         </div>
 
-        <button type="submit">Add Blog</button>
+        <button type="submit" className="submit-btn">Add Blog</button>
       </form>
     </div>
   );

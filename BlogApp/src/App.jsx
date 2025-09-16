@@ -4,7 +4,7 @@ import Blogs from "./components/Blogs";
 import BlogDetails from "./components/BlogDetails";
 import AddBlog from "./components/AddBlog";
 import "./App.css";
-// import {ReactRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
   const [arr, setArr] = useState([]);
@@ -25,7 +25,14 @@ function App() {
     <>
       <h1 className="main-heading">News App</h1>
       <div className="news-container">
-        <AddBlog></AddBlog>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/posts" element={<Blogs />} />
+            <Route path="/posts/:id" element={<BlogDetails />} />
+            <Route path="/add-post" element={<AddBlog />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </>
   );

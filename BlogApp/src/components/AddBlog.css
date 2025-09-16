@@ -1,0 +1,71 @@
+/* AddBlog.css */
+
+.add-blog-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: linear-gradient(135deg, #f9f9f9, #f1faff);
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.2s ease-in-out;
+}
+
+.add-blog-container:hover {
+  transform: scale(1.01);
+}
+
+.add-blog-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #4f8ef7;
+  box-shadow: 0 0 5px rgba(79, 142, 247, 0.5);
+}
+
+form textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #4f8ef7, #6ab1f7);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, #3c74d7, #4f8ef7);
+  transform: translateY(-2px);
+}

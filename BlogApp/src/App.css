@@ -1,6 +1,78 @@
-.main-heading{
-    text-align: center;
-    margin-top: 20px;
-    font-size: 2rem;
-    color: #333;
+/* App.css */
+
+/* Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f8f9fa, #e0eafc);
+  min-height: 100vh;
+  color: #2d3436;
+}
+
+/* Main heading */
+.main-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 30px 0;
+  color: #1e3c72;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  letter-spacing: 1.2px;
+}
+
+/* Container for all pages */
+.news-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* General link styles */
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+/* Utility classes for spacing */
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+/* Card-style look for children pages */
+.page-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6c5ce7;
+  margin-top: 40px;
+}
+
+/* Error state */
+.error {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #d63031;
+  margin-top: 20px;
 }
