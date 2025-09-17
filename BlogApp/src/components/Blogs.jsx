@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import "./Blogs.css"; // optional, if you want styling
 
 const Blogs = () => {
@@ -25,6 +26,7 @@ const Blogs = () => {
             {blog.imageUrl && (
               <img src={blog.imageUrl} alt={blog.title} className="blog-image" />
             )}
+            <Link to={`/posts/${index}`}>Details</Link>
           </div>
         ))
       )}
